@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tp-clinica": {
+      "hosting": {
+        "argon-design-system-angular": [
+          "tp-clinica"
+        ]
+      }
+    }
+  }
+}
