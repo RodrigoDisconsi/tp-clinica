@@ -12,14 +12,19 @@ import { RegisterComponent } from './componentes/register/register.component';
 import { LandingComponent } from './landing/landing.component';
 // import { LoginComponent } from './login/login.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 const routes: Routes =[
-    { path: 'home',             component: HomeComponent },
-    { path: 'profile',     component: ProfileComponent },
-    { path: 'register',           component: RegisterComponent },
-    { path: 'landing',          component: LandingComponent },
+    { path: '', component: NavbarComponent,
+    children: 
+    [
+      {path: '', component: HomeComponent},
+      { path: 'profile',     component: ProfileComponent },
+      { path: 'register',           component: RegisterComponent },
+      { path: 'landing',          component: LandingComponent },
+    ]
+    },
     { path: 'login',          component: LoginComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
       this.cargando = true;
       try{
         let userReg = this.registroForm.value;
-        const user = await this.auth.register(userReg.email, userReg.password, userReg.username);
+        const user = await this.auth.register(userReg.email, userReg.password, userReg.username, "paciente");
         if(user){
           this.router.navigateByUrl("/login");
           this.cargando = false;

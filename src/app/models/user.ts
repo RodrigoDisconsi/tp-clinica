@@ -5,4 +5,6 @@ export interface User{
     fechaAcceso?:Date;
     sexo?:string;
     username?:string;
+    tipo?:string;
+    especialidad?:string;
 }

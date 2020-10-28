@@ -1,4 +1,4 @@
-    <section class="section section-shaped section-lg">
+    <section class="section section-shaped">
       <div class="shape shape-style-1 bg-gradient-default">
         <span></span>
         <span></span>
@@ -9,7 +9,7 @@
         <span></span>
         <span></span>
       </div>
-      <div class="container pt-lg-md">
+      <div class="container login">
         <div class="row justify-content-center">
           <div class="loading" *ngIf="cargando">
             <mat-spinner></mat-spinner>
@@ -39,19 +39,15 @@
                 <div class="text-center text-muted mb-4">
                   <small>O ingresá con tu cuenta</small>
                 </div>
-                <!-- <div class="cont">
-                  <img src="../../../assets/imagenes/login.png" alt="Avatar" width="120px">
-                </div>
-                <br> -->
                 <form [formGroup]="loginForm">
                   <div class="form-group mb-3">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                       </div>
-                      <input formControlName="username" class="form-control" placeholder="Email" type="email" (focus)="focus=true" (blur)="focus=false">
+                      <input formControlName="username" class="form-control" placeholder="Email" type="email" (focus)="focus=true" (blur)="focus=false" required>
                     </div>
-                    <small *ngIf="isNotValidField('username')" class="form-text text-danger">{{getErrorMessage('username')}}</small>
+                    <!-- <small *ngIf="isNotValidField('username')" class="form-text text-danger">{{getErrorMessage('username')}}</small> -->
                   </div>
                   <div class="form-group">
                     <div class="input-group input-group-alternative">
@@ -65,6 +61,7 @@
                       type="password"
                       (focus)="focus1=true"
                       (blur)="focus1=false"
+                      required
                       >
                       <span class="input-group-text btn-hidden-password" mat-icon-button matSuffix (click)="hide = !hide">
                        <mat-icon>{{ "visibility" }}</mat-icon>
