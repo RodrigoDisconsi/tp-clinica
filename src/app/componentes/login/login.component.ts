@@ -26,9 +26,12 @@ export class LoginComponent implements OnInit {
 
   async onLogin(){
     this.cargando = true;
+    this.loginForm.disable();
     try{
       const user = await this.auth.login(this.loginForm.value.username, this.loginForm.value.password);
       if(user){
+        this.loginForm.enable();
+        this.cargando = false;
         this.router.navigateByUrl("");
       }
     }

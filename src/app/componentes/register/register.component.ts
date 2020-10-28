@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -8,10 +10,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  test : Date = new Date();
   focus;
   focus1;
   focus2;
+  cargando:boolean = false;
   registroForm = this.fb.group({
     username: ['', Validators.required],
     email: ['', Validators.required],
@@ -19,7 +21,7 @@ export class RegisterComponent implements OnInit {
   });
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private auth:AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -39,6 +41,22 @@ export class RegisterComponent implements OnInit {
   isNotValidField(field:string): boolean{
     return (this.registroForm.get(field).touched || this.registroForm.get(field).dirty) 
     && !this.registroForm.get(field).valid;
+  }
+
+  async onRegister(){
+      this.cargando = true;
+      try{
+        let userReg = this.registroForm.value;
+        const user = await this.auth.register(userReg.email, userReg.password, userReg.username);
+        if(user){
+          this.router.navigateByUrl("/login");
+          this.cargando = false;
+        }
+      }
+      catch(e){
+        console.info('ERROR -> ', e);
+        this.cargando = false;
+      }
   }
   
 }

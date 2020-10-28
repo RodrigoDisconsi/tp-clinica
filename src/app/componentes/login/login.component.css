@@ -10,4 +10,6 @@
 
 .loading{
     position: fixed;
+    z-index: 99 !important;
+    top: 35%;
 }
