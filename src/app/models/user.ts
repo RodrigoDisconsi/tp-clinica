@@ -6,5 +6,5 @@ export interface User{
     sexo?:string;
     username?:string;
     tipo?:string;
-    especialidad?:string;
+    especialidad?:string[];
 }

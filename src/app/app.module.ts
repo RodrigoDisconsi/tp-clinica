@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { RegistroProfesionalComponent } from './componentes/registro-profesional/registro-profesional.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { environment } from 'src/environments/environment';
     FooterComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegistroProfesionalComponent
   ],
   imports: [
     CommonModule,

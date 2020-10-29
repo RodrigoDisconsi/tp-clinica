@@ -39,7 +39,7 @@ export class AuthService {
     }
   }
 
-  async register(email:string, password:string, username:string, tipo:string): Promise<User>{
+  async register(email:string, password:string, username:string, tipo:string, especialidad?:string[]): Promise<User>{
     try{
       const { user } = await this.fauth.createUserWithEmailAndPassword(email,password);
       let insertUser:User = {
@@ -49,8 +49,14 @@ export class AuthService {
         fechaAcceso: new Date(Date.now()),
         tipo: tipo
       }
+      if(tipo == "profesional"){
+        insertUser.especialidad = especialidad;
+      }
+      else if(tipo == "paciente"){
+        user.sendEmailVerification();
+      }
       await this.setUser(insertUser);
-      user.sendEmailVerification();
+      window.localStorage.setItem("user", user.uid);
       return user;
     }
     catch(error){
