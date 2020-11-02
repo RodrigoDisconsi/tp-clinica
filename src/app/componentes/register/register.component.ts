@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'firebase';
 import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
@@ -45,17 +46,22 @@ export class RegisterComponent implements OnInit {
 
   async onRegister(){
       this.cargando = true;
+      this.registroForm.disable();
       try{
-        let userReg = this.registroForm.value;
-        const user = await this.auth.register(userReg.email, userReg.password, userReg.username, "paciente");
+        const userReg:User = this.registroForm.value;
+        userReg.tenantId = "paciente"
+        const user = await this.auth.register(userReg);
         if(user){
           this.router.navigateByUrl("/login");
-          this.cargando = false;
         }
       }
       catch(e){
         console.info('ERROR -> ', e);
+
+      }
+      finally{
         this.cargando = false;
+        this.registroForm.enable();
       }
   }
   

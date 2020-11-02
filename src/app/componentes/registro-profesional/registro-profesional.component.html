@@ -11,6 +11,9 @@
     </div>
     <div class="container">
       <div class="row justify-content-center">
+        <div class="loading" *ngIf="cargando">
+          <mat-spinner></mat-spinner>
+        </div>
         <div class="col-lg-5">
           <div class="card bg-secondary shadow border-0">
             <div class="card-header bg-white pb-5">
@@ -77,28 +80,51 @@
                   <small *ngIf="isNotValidField('password')" class="form-text text-danger">{{getErrorMessage('password')}}</small>
                 </div>
                 <div class="form-group">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
+                    <!-- <div class="input-group mb-3">
+                        <div class="input-group-prepend  input-group-alternative">
                           <label class="input-group-text" for="inputGroupSelect01">Especialidad</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01" formControlName="especialidad">
-                          <option *ngFor="let especialidad of especialidades.especialidades"
-                           value="especialidad">{{especialidad}}</option>
-                        </select>
+                        <div>
+                          <select class="custom-select" id="inputGroupSelect01" formControlName="especialidad">
+                            <option *ngFor="let especialidad of especialidades.especialidades"
+                             value="especialidad">{{especialidad}}</option>
+                          </select>
+                        </div>
+                      </div> -->
+                      <div class="list-group">
+                        <!-- <a href="#" class="list-group-item list-group-item-action active">
+                          Cras justo odio
+                        </a> -->
+                        <!-- <div class="input-group input-group-alternative">
+                          <a *ngFor="let especialidad of especialidades.especialidades" class="list-group-item list-group-item-action">{{especialidad}}</a>
+                        </div> -->
+                        <ul>
+                          <li *ngFor="let especialidad of especialidades.especialidades">
+                            <div class="custom-control custom-checkbox mb-3">
+                              <input class="custom-control-input" id="{{especialidad}}" type="checkbox" (click)="onClickCheckbox(especialidad)">
+                              <label class="custom-control-label" for="{{especialidad}}">
+                                <span>{{especialidad}}</span>
+                              </label>
+                            </div>
+                          </li>
+                        </ul>
+                        <!-- <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                        <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a> -->
                       </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
+                        <div class="input-group input-group-alternative">
                           <div class="input-group-text">
                             <input type="checkbox" [(ngModel)]="otraEspecialidad" [ngModelOptions]="{standalone: true}" (change)="onChange()">
                           </div>
+                          <input disabled formControlName="otraEspecialidad" type="text" class="form-control" placeholder="Otra especialidad...">
                         </div>
-                        <input disabled formControlName="otraEspecialidad" type="text" class="form-control" placeholder="Otra especialidad...">
                       </div>
                 </div>
                 <div class="text-center">
-                  <button [disabled]="registroForm.invalid" type="button" class="btn btn-primary mt-4" (click)="onRegister()">Crear cuenta</button>
+                  <button [disabled]="registroForm.invalid || cargando" type="button" class="btn btn-primary mt-4" (click)="onRegister()">Crear cuenta</button>
                 </div>
               </form>
             </div>

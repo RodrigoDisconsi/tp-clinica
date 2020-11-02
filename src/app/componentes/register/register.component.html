@@ -11,6 +11,9 @@
       </div>
       <div class="container pt-lg-md">
         <div class="row justify-content-center">
+          <div class="loading" *ngIf="cargando">
+            <mat-spinner></mat-spinner>
+          </div>
           <div class="col-lg-5">
             <div class="card bg-secondary shadow border-0">
               <div class="card-header bg-white pb-5">
@@ -68,7 +71,7 @@
                     <small *ngIf="isNotValidField('password')" class="form-text text-danger">{{getErrorMessage('password')}}</small>
                   </div>
                   <div class="text-center">
-                    <button [disabled]="registroForm.invalid" type="button" class="btn btn-primary mt-4" (click)="onRegister()">Crear cuenta</button>
+                    <button [disabled]="registroForm.invalid || cargando" type="button" class="btn btn-primary mt-4" (click)="onRegister()">Crear cuenta</button>
                   </div>
                 </form>
               </div>

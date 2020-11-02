@@ -4,7 +4,9 @@ export interface User{
     emailVerified?:boolean;
     fechaAcceso?:Date;
     sexo?:string;
-    username?:string;
+    nombre?:string;
+    apellido?:string;
     tipo?:string;
+    password?:string;
     especialidad?:string[];
 }
