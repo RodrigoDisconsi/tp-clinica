@@ -12,22 +12,22 @@ import { switchMap } from 'rxjs/operators';
 })
 export class AuthService {
   
-  public user: Observable<User>;
+  // public user: Observable<User>;
 
   constructor(private fauth:AngularFireAuth, private afs: AngularFirestore) { 
-    this.getUser();
+    // this.getUser();
   }
 
-  getUser(){  
-    this.user = this.fauth.authState.pipe(
-      switchMap(User => {
-        if(User){
-          return this.afs.doc<User>(`Users/${User.uid}`).valueChanges();
-        }
-        return of(null);
-      })
-    );
-  }
+  // getUser(){  
+  //   this.user = this.fauth.authState.pipe(
+  //     switchMap(User => {
+  //       if(User){
+  //         return this.afs.doc<User>(`Users/${User.uid}`).valueChanges();
+  //       }
+  //       return of(null);
+  //     })
+  //   );
+  // }
 
   async logout(): Promise<void>{
     try{
@@ -48,7 +48,7 @@ export class AuthService {
         user.sendEmailVerification();
       }
       await this.setUser(userObj);
-      window.localStorage.setItem("user", user.uid);
+      window.localStorage.setItem("user", JSON.stringify(userObj));
       return user;
     }
     catch(error){
@@ -66,7 +66,7 @@ export class AuthService {
           fechaAcceso: new Date(Date.now())
         }
         this.setUser(insertUser);
-        console.info(user);
+        this.setUserStorage(user.uid);
         return user;
     }
     catch (error){
@@ -84,6 +84,14 @@ export class AuthService {
   //     console.log('Error->',error);
   //   }
   // }
+
+  setUserStorage(uid:string){
+    this.afs.collection('Users').doc(uid)
+    .get().subscribe(x =>{
+      console.info(x.data());
+      window.localStorage.setItem("user", JSON.stringify(x.data() as User));
+    });
+  }
 
   setUser(user:User){
     user.fechaAcceso = new Date(Date.now());
