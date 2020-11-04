@@ -26,7 +26,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { RegistroProfesionalComponent } from './componentes/registro-profesional/registro-profesional.component';
+import { ProfesionalComponent } from './componentes/register/profesional/profesional.component';
+import { AdministradorComponent } from './componentes/register/administrador/administrador.component';
+import { PacienteComponent } from './componentes/register/paciente/paciente.component';
+import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-profesional.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { RegistroProfesionalComponent } from './componentes/registro-profesional
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    RegistroProfesionalComponent
+    ProfesionalComponent,
+    AdministradorComponent,
+    PacienteComponent,
+    AltaProfesionalComponent
   ],
   imports: [
     CommonModule,

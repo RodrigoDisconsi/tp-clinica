@@ -8,11 +8,11 @@ import { asEnumerable } from 'linq-es2015';
 // import { Guid } from 'guid-typescript';
 
 @Component({
-  selector: 'app-registro-profesional',
-  templateUrl: './registro-profesional.component.html',
-  styleUrls: ['./registro-profesional.component.css']
+  selector: 'app-profesional',
+  templateUrl: './profesional.component.html',
+  styleUrls: ['./profesional.component.css']
 })
-export class RegistroProfesionalComponent implements OnInit {
+export class ProfesionalComponent implements OnInit {
   otraEspecialidad:boolean = false;
   cargando:boolean = false;
   especialidades:any = [];

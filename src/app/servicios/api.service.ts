@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -28,13 +29,13 @@ export class ApiService {
     return this.afs.collection(entidad).doc(obj.id).delete();
   }
 
-  // getPeliculasXActor(obj:any){
-  //   return this.afs.collection('peliculas', ref => ref.where('actor', '==', obj)).snapshotChanges()
-  //   .pipe(map(changes => {
-  //     return changes.map(action => {
-  //       const data = action.payload.doc.data() as PeliculaInterface;
-  //       return data;
-  //     });
-  //   }));
-  //   }
+  getWithFilter(entidad:string, campo:string, conector:any, dato:any){
+    return this.afs.collection(entidad, ref => ref.where(campo, conector, dato)).snapshotChanges()
+    .pipe(map(changes =>{
+      return changes.map(action =>{
+        const data = action.payload.doc.data();
+        return data;
+      });
+    }));
+  }
 }

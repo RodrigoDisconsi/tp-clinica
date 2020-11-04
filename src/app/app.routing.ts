@@ -13,7 +13,7 @@ import { LandingComponent } from './landing/landing.component';
 // import { LoginComponent } from './login/login.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { RegistroProfesionalComponent } from './componentes/registro-profesional/registro-profesional.component';
+import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-profesional.component';
 
 const routes: Routes =[
     { path: '', component: NavbarComponent,
@@ -22,10 +22,10 @@ const routes: Routes =[
       {path: '', component: HomeComponent},
       { path: 'profile',     component: ProfileComponent },
       { path: 'landing',          component: LandingComponent },
+      { path: 'altaProfesional',           component: AltaProfesionalComponent},
     ]
   },
-    { path: 'register',           component: RegisterComponent },
-    { path: 'registerProfesional',           component: RegistroProfesionalComponent },
+    { path: 'register/:tipoUsuario',           component: RegisterComponent },
     { path: 'login',          component: LoginComponent },
 ];
 

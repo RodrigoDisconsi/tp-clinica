@@ -14,6 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [],
@@ -32,7 +33,8 @@ import { MatTableModule } from '@angular/material/table';
     MatGridListModule,
     MatProgressSpinnerModule,
     MatMenuModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule
   ],
   exports: [
     MatToolbarModule,
@@ -48,7 +50,8 @@ import { MatTableModule } from '@angular/material/table';
     MatGridListModule,
     MatProgressSpinnerModule,
     MatMenuModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule
   ],
   providers: [ ]
 })

@@ -28,6 +28,9 @@ export class AuthService {
   //     })
   //   );
   // }
+  getUser():User{
+    return window.localStorage.getItem("user") ? JSON.parse(window.localStorage.getItem("user")) : null;
+  }
 
   async logout(): Promise<void>{
     try{
@@ -59,15 +62,14 @@ export class AuthService {
   async login(email:string, password:string): Promise<User>{
     try{  
         const { user } = await this.fauth.signInWithEmailAndPassword(email,password);
-        window.localStorage.setItem("user", user.uid);
         let insertUser:User = {
           email: user.email,
           uid: user.uid,
           fechaAcceso: new Date(Date.now())
         }
-        this.setUser(insertUser);
-        this.setUserStorage(user.uid);
-        return user;
+        await this.setUser(insertUser);
+        return this.setUserStorage(user.uid);
+        // return user;
     }
     catch (error){
       console.log('Error->', error);
@@ -85,12 +87,12 @@ export class AuthService {
   //   }
   // }
 
-  setUserStorage(uid:string){
-    this.afs.collection('Users').doc(uid)
-    .get().subscribe(x =>{
-      console.info(x.data());
+  setUserStorage(uid:string): Promise<User> {
+    return this.afs.collection('Users').doc(uid)
+    .get().toPromise().then(x =>{
       window.localStorage.setItem("user", JSON.stringify(x.data() as User));
-    });
+      return x.data() as User;
+    });;
   }
 
   setUser(user:User){

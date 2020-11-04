@@ -18,7 +18,9 @@ var navbarHeight = 0;
 })
 
 export class NavbarComponent implements OnInit {
+    public user:any;
     public isLogged:boolean = false;
+    public tipo:string;
     private _router: Subscription;
 
     constructor(private auth:AuthService, private renderer : Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
@@ -55,8 +57,10 @@ export class NavbarComponent implements OnInit {
         lastScrollTop = st;
     };
     ngOnInit() {
-      if(window.localStorage.getItem("user")){
-          this.isLogged = true;
+    let user = this.auth.getUser();
+    if(user){
+        this.isLogged = true;
+        this.tipo = user.tipo;
       }
       var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
       this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
