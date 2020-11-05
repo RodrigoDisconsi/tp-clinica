@@ -15,6 +15,7 @@ export class PacienteComponent implements OnInit {
   focus;
   focus1;
   focus2;
+  hide:boolean = false;
   cargando:boolean = false;
   tipoUsuario:string;
   registroForm = this.fb.group({

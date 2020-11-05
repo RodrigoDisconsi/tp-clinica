@@ -14,6 +14,7 @@ export class AdministradorComponent implements OnInit {
 
   cargando:boolean = false;
   tipoUsuario:string;
+  hide:boolean = false;
   registroForm = this.fb.group({
     username: ['', Validators.required],
     email: ['', Validators.required],

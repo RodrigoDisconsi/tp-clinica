@@ -15,6 +15,7 @@ import { asEnumerable } from 'linq-es2015';
 export class ProfesionalComponent implements OnInit {
   otraEspecialidad:boolean = false;
   cargando:boolean = false;
+  hide:boolean = false;
   especialidades:any = [];
   userEspecialidad:string[] = [];
   registroForm = this.fb.group({
