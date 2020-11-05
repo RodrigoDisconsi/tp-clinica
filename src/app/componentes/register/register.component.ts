@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
   // focus2;
   // cargando:boolean = false;
   tipoUsuario:string;
+  cargando:boolean = false;
   // registroForm = this.fb.group({
   //   username: ['', Validators.required],
   //   email: ['', Validators.required],

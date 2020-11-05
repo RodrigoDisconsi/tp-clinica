@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   focus;
   focus1;
   cargando: boolean = false;
+  hide:boolean = false;
   loginForm = this.fb.group({
     username: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(6)]]
