@@ -70,6 +70,7 @@ export class ProfesionalComponent implements OnInit {
       try{
         const userReg:User = this.registroForm.value;
         userReg.tipo = "Profesional";
+        userReg.activo = false;
         if(this.otraEspecialidad){
           if(otraEspecialidad){
             this.userEspecialidad.push(otraEspecialidad);

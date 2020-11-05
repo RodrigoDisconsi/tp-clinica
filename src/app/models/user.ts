@@ -8,5 +8,6 @@ export interface User{
     apellido?:string;
     tipo?:string;
     password?:string;
+    activo?:boolean;
     especialidad?:string[];
 }

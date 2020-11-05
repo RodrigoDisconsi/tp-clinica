@@ -17,36 +17,6 @@ export class AltaProfesionalComponent implements OnInit {
     this.api.getWithFilter("Users", "tipo", "==", "profesional").subscribe(x =>{
       this.usuarios = x;
     });
-    // this.usuarios = [{
-    //   nombre:"hola",
-    //   apellido:"chau",
-    //   especialidad:["Médico", "Médico"]
-    // },
-    // {
-    //   nombre:"hola",
-    //   apellido:"chau",
-    //   especialidad:["Médico", "Médico"]
-    // },
-    // {
-    //   nombre:"hola",
-    //   apellido:"chau",
-    //   especialidad:["Médico", "Médico"]
-    // },
-    // {
-    //   nombre:"hola",
-    //   apellido:"chau",
-    //   especialidad:["Médico", "Médico"]
-    // },
-    // {
-    //   nombre:"hola",
-    //   apellido:"chau",
-    //   especialidad:["Médico", "Médico"]
-    // },
-    // {
-    //   nombre:"hola",
-    //   apellido:"chau",
-    //   especialidad:["Médico", "Médico"]
-    // }]
   }
 
 }

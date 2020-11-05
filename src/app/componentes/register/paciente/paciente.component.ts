@@ -54,6 +54,7 @@ export class PacienteComponent implements OnInit {
       try{
         const userReg:User = this.registroForm.value;
         userReg.tipo = "paciente";
+        userReg.activo = true;
         const user = await this.auth.register(userReg);
         if(user){
           this.router.navigateByUrl("/login");

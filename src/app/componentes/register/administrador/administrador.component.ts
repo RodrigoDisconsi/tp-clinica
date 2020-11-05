@@ -60,6 +60,7 @@ export class AdministradorComponent implements OnInit {
       try{
         const userReg:User = this.registroForm.value;
         userReg.tipo = "admin";
+        userReg.activo = true;
         const user = await this.auth.register(userReg);
         if(user){
           this.router.navigateByUrl("/login");
