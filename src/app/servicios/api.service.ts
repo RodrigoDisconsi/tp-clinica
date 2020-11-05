@@ -16,13 +16,17 @@ export class ApiService {
     return this.afs.collection(entidad).valueChanges();
   }
 
-  // getOneActor(idActor:string){
-  //   return 
+  // setAllObj(entidad:string, obj:any){
+  //   return this.afs.collection(entidad).add(obj);
   // }
 
 
   setObj(entidad:string, obj:any){
     return this.afs.collection(entidad).doc(obj.id).set(obj, {merge: true});
+  }
+
+  updateUser(obj:any){
+    return this.afs.collection("Users").doc(obj.uid).set(obj, {merge: true});
   }
 
   removeObj(entidad:string, obj:any){
