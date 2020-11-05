@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app.routing';
 import { MaterialModule } from './material/material.module';
 
 import { AppComponent } from './app.component';
-import { LandingComponent } from './landing/landing.component';
+// import { LandingComponent } from './landing/landing.component';
 // import { ProfileComponent } from './profile/profile.component';
 import { ProfileComponent } from './componentes/profile/profile.component';
 // import { HomeComponent } from './home/home.component';
@@ -17,7 +17,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 // import { FooterComponent } from './shared/footer/footer.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
-import { HomeModule } from './home/home.module';
+// import { HomeModule } from './home/home.module';
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { RegisterComponent } from './componentes/register/register.component';
@@ -34,7 +34,7 @@ import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-pr
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent,
+    // LandingComponent,
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
@@ -54,7 +54,7 @@ import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-pr
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule,
+    // HomeModule,
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireAuthModule,
