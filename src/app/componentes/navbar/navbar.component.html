@@ -12,8 +12,8 @@
         <div class="navbar-collapse-header">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a [routerLink]="['/home']">
-                <img src="./assets/img/brand/blue.png">
+              <a class="logo navbar-brand mr-lg-5" style="color: black;" [routerLink]="['/home']">
+                Medilab
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -48,13 +48,13 @@
               </a>
               <div class="dropdown-menu-xl dropdown-menu" >
                 <div class="dropdown-menu-inner">
-                  <a routerLinkActive="active" [routerLink]="['documentation/tutorial']" class="media d-flex align-items-center">
+                  <a routerLinkActive="active" [routerLink]="['horarios']" class="media d-flex align-items-center">
                     <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                       <i class="ni ni-spaceship"></i>
                     </div>
                     <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Getting started</h6>
-                      <p class="description d-none d-md-inline-block mb-0">Learn how to use Argon compiling Scss, change brand colors and more.</p>
+                      <h6 class="heading text-primary mb-md-1">Horarios</h6>
+                      <p class="description d-none d-md-inline-block mb-0">Adminsitre días y horas en la que atiende.</p>
                     </div>
                   </a>
                   <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
@@ -94,9 +94,8 @@
         </ng-template>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system-angular?ref=adsa-navbar" target="_blank" data-toggle="tooltip" title="Star us on Github">
-              <i class="fa fa-github"></i>
-              <span class="nav-link-inner--text d-lg-none">Github</span>
+            <a [routerLink]="['/profile']" class="nav-link nav-link-icon" title="Perfil">
+              <mat-icon>account_circle</mat-icon>
             </a>
           </li>
           <li *ngIf="!isLogged" class="nav-item d-none d-lg-block ml-lg-4">
@@ -119,19 +118,4 @@
       </div>
     </div>
   </nav>
-  <section class="section section-lg section-hero section-shaped">
-    <!-- Background circles -->
-    <div class="shape shape-style-1 shape-primary">
-      <span class="span-150"></span>
-      <span class="span-50"></span>
-      <span class="span-50"></span>
-      <span class="span-75"></span>
-      <span class="span-100"></span>
-      <span class="span-75"></span>
-      <span class="span-50"></span>
-      <span class="span-100"></span>
-      <span class="span-50"></span>
-      <span class="span-100"></span>
-    </div>
-    <router-outlet></router-outlet>
-  </section>
+<router-outlet></router-outlet>

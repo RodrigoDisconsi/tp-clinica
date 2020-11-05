@@ -17,7 +17,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 // import { FooterComponent } from './shared/footer/footer.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
-// import { HomeModule } from './home/home.module';
+import { HomeModule } from './home/home.module';
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { RegisterComponent } from './componentes/register/register.component';
@@ -30,6 +30,7 @@ import { ProfesionalComponent } from './componentes/register/profesional/profesi
 import { AdministradorComponent } from './componentes/register/administrador/administrador.component';
 import { PacienteComponent } from './componentes/register/paciente/paciente.component';
 import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-profesional.component';
+import { AdministrarHorariosComponent } from './componentes/administrar-horarios/administrar-horarios.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-pr
     ProfesionalComponent,
     AdministradorComponent,
     PacienteComponent,
-    AltaProfesionalComponent
+    AltaProfesionalComponent,
+    AdministrarHorariosComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +56,7 @@ import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-pr
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    // HomeModule,
+    HomeModule,
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireAuthModule,
