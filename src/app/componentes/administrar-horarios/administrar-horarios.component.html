@@ -1,1 +1,86 @@
-<p>administrar-horarios works!</p>
+<div class="position-relative">
+    <section  class="slide-item overlay" style="background-image: url(../../../assets/imagenes/bg_1.jpg);">
+          <div class="container h-100">
+            <div class="horarios row h-100 align-items-center">
+                <div class="col-3 list-group">
+                    <a (click)="lunes = !lunes" class="list-group-item list-group-item-action" [ngClass]="{active: lunes}">
+                        Lunes
+                    </a>
+                    <a (click)="martes = !martes" class="list-group-item list-group-item-action" [ngClass]="{active: martes}">
+                        Martes
+                    </a>
+                    <a (click)="miercoles = !miercoles" class="list-group-item list-group-item-action" [ngClass]="{active: miercoles}">
+                        Miércoles
+                    </a>
+                    <a (click)="jueves = !jueves" class="list-group-item list-group-item-action" [ngClass]="{active: jueves}">
+                        Jueves
+                    </a>
+                    <a (click)="viernes = !viernes" class="list-group-item list-group-item-action" [ngClass]="{active: viernes}">
+                        Viernes
+                    </a>
+                    <a (click)="sabado = !sabado" class="list-group-item list-group-item-action" [ngClass]="{active: sabado}">
+                        Sábado
+                    </a>
+                </div>
+                <div class="col-2 list-group">
+                    <small style="color: white;">Desde</small>
+                    <div *ngIf="lunes">
+                        <input type="number" min="8" max="16">
+                    </div>
+                    <div *ngIf="martes">
+                        <input type="number" min="8" max="16">
+                    </div>
+                    <div *ngIf="miercoles">
+                        <input type="number" min="8" max="16">
+                    </div>
+                    <div *ngIf="jueves">
+                        <input type="number" min="8" max="16">
+                    </div>
+                    <div *ngIf="viernes">
+                        <input type="number" min="8" max="16">
+                    </div>
+                    <div *ngIf="sabado">
+                        <input type="number" min="8" max="12">
+                    </div>
+                </div>
+                <div class="col-2 list-group">
+                    <small style="color: white;">Hasta</small>
+                    <div *ngIf="lunes">
+                        <input type="number" min="10" max="19">
+                    </div>
+                    <div *ngIf="martes">
+                        <input type="number" min="10" max="19">
+                    </div>
+                    <div *ngIf="miercoles">
+                        <input type="number" min="10" max="19">
+                    </div>
+                    <div *ngIf="jueves">
+                        <input type="number" min="10" max="19">
+                    </div>
+                    <div *ngIf="viernes">
+                        <input type="number" min="10" max="19">
+                    </div>
+                    <div *ngIf="sabado">
+                        <input type="number" min="10" max="14">
+                    </div>
+                </div>
+            </div>
+          </div>
+        <div class="separator separator-bottom separator-skew zindex-100">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+          </div>
+    </section>
+</div>
+<!-- <div class="position-fixed">
+    <div class="fixed-middle list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+          Cras justo odio
+        </a>
+        <a (click)="lunes = !lunes" class="list-group-item list-group-item-action" [ngClass]="{active: lunes}">Dapibus ac facilisis in</a>
+        <a (click)="lunes = !lunes" class="list-group-item list-group-item-action" [ngClass]="{active: lunes}">Morbi leo risus</a>
+        <a (click)="lunes = !lunes" class="list-group-item list-group-item-action" [ngClass]="{active: lunes}">Porta ac consectetur ac</a>
+        <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+    </div>
+</div> -->

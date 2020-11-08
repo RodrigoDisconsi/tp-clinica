@@ -1,6 +1,6 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
     <div class="container">
-      <a class="logo navbar-brand mr-lg-5" [routerLink]="['/home']">
+      <a class="logo navbar-brand mr-lg-5" style="color: #fff;" [routerLink]="['/']">
         Medilab
         <!-- <img src="./assets/img/brand/argon-white.png"> -->
       </a>
@@ -12,7 +12,7 @@
         <div class="navbar-collapse-header">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a class="logo navbar-brand mr-lg-5" style="color: black;" [routerLink]="['/home']">
+              <a class="logo navbar-brand mr-lg-5" style="color: black;" [routerLink]="['/']">
                 Medilab
               </a>
             </div>
@@ -48,13 +48,13 @@
               </a>
               <div class="dropdown-menu-xl dropdown-menu" >
                 <div class="dropdown-menu-inner">
-                  <a routerLinkActive="active" [routerLink]="['horarios']" class="media d-flex align-items-center">
+                  <a [routerLink]="['/horarios']" class="media d-flex align-items-center">
                     <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                       <i class="ni ni-spaceship"></i>
                     </div>
                     <div class="media-body ml-3">
                       <h6 class="heading text-primary mb-md-1">Horarios</h6>
-                      <p class="description d-none d-md-inline-block mb-0">Adminsitre días y horas en la que atiende.</p>
+                      <p class="description d-none d-md-inline-block mb-0">Adminsitre días y horas en los que atiende.</p>
                     </div>
                   </a>
                   <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">

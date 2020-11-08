@@ -20,7 +20,7 @@ var navbarHeight = 0;
 export class NavbarComponent implements OnInit {
     public user:any;
     public isLogged:boolean = false;
-    public isCollapsed:boolean;
+    // public isCollapsed:boolean = true;
     public tipo:string;
     private _router: Subscription;
 

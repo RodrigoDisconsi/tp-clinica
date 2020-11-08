@@ -1,0 +1,65 @@
+<!-- <div class="position-relative"> -->
+<!-- <section  class="slide-item overlay" style="background-image: url(../../../assets/imagenes/bg_1.jpg);"> -->
+<div>
+    <!-- Hero for FREE version -->
+    <section class="section section-lg section-hero section-shaped">
+        <!-- Background circles -->
+        <div class="shape shape-style-1 shape-primary">
+            <span class="span-150"></span>
+            <span class="span-50"></span>
+            <span class="span-50"></span>
+            <span class="span-75"></span>
+            <span class="span-100"></span>
+            <span class="span-75"></span>
+            <span class="span-50"></span>
+            <span class="span-100"></span>
+            <span class="span-50"></span>
+            <span class="span-100"></span>
+        </div>
+        <div class="container">
+            <!-- <div class="row">
+                <h4 class="display-3 mb-0" style="color: white;">
+                    Turnos
+                </h4>
+                <ul class="list-group mb-3">
+                    <li *ngFor="let turno of turnos" class="list-group-item d-flex justify-content-between lh-condensed"
+                        (click)="onActor(actor)">
+                        <div>
+                            <h6 class="my-0">{{turno.paciente}}</h6>
+                            <small class="text-muted">{{turno.dia}}</small>
+                            <br>
+                            <small class="text-muted">{{turno.hora}}</small>
+                        </div>
+                        <img [src]="url('turno.fotoPaciente')" width="120px" height="120px">
+        
+                    </li>
+                </ul>
+            </div> -->
+            <div class="container">
+                <div>
+                  <div class="row">
+                    <!-- <div class="col-lg-6 text-center">
+                      <h1 class="mb-1 text-white">
+                        <span>Welcome To</span>
+                      </h1>
+                      <p class="lead text-white">Medilab.</p>
+                      <div class="mt-5">
+                        <small class="text-white font-weight-bold mb-0 mr-2">*coded by Franco Rodrigo Disconsi</small>
+                      </div>
+                    </div> -->
+                    <div class="col-6">
+                        <app-confirmar-turnos></app-confirmar-turnos>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="separator separator-bottom separator-skew zindex-100">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+                xmlns="http://www.w3.org/2000/svg">
+                <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    </section>
+</div>
+<!-- </div> -->

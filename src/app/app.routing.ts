@@ -14,6 +14,8 @@ import { RegisterComponent } from './componentes/register/register.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-profesional.component';
+import { AdministrarHorariosComponent } from './componentes/administrar-horarios/administrar-horarios.component';
+import { TurnosComponent } from './componentes/turnos/turnos.component';
 
 const routes: Routes =[
     { path: '', component: NavbarComponent,
@@ -21,6 +23,8 @@ const routes: Routes =[
     [
       {path: '', component: HomeComponent},
       { path: 'profile',     component: ProfileComponent },
+      { path: 'horarios',     component: AdministrarHorariosComponent },
+      { path: 'turnos',     component: TurnosComponent },
       // { path: 'landing',          component: LandingComponent },
       { path: 'altaProfesional',           component: AltaProfesionalComponent},
     ]

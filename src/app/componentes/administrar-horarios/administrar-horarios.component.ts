@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministrarHorariosComponent implements OnInit {
 
+  public lunes:boolean = false;
+  public martes:boolean = false;
+  public miercoles:boolean = false;
+  public jueves:boolean = false;
+  public viernes:boolean = false;
+  public sabados:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

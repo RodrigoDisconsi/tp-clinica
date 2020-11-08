@@ -1,4 +1,4 @@
-.overlay{
+/* .overlay{
     position: relative;
 }
 
@@ -21,18 +21,4 @@
     content: "";
     position: absolute;
     background: rgba(0, 0, 0, 0.2);
-}
-
-.horarios{
-    z-index: 3 !important;
-    position: fixed;
-}
-
-input{
-    padding: 0.8rem 0.8rem;
-    width: 80%;
-}
-
-.active{
-    color: #fff !important;
-}
+} */

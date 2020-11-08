@@ -19,7 +19,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './componentes/login/login.component';
-import { HomeComponent } from './componentes/home/home.component';
+// import { HomeComponent } from './componentes/home/home.component';
 import { RegisterComponent } from './componentes/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -31,6 +31,8 @@ import { AdministradorComponent } from './componentes/register/administrador/adm
 import { PacienteComponent } from './componentes/register/paciente/paciente.component';
 import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-profesional.component';
 import { AdministrarHorariosComponent } from './componentes/administrar-horarios/administrar-horarios.component';
+import { TurnosComponent } from './componentes/turnos/turnos.component';
+import { ConfirmarTurnosComponent } from './componentes/turnos/confirmar-turnos/confirmar-turnos.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +42,15 @@ import { AdministrarHorariosComponent } from './componentes/administrar-horarios
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    HomeComponent,
+    // HomeComponent,
     RegisterComponent,
     ProfesionalComponent,
     AdministradorComponent,
     PacienteComponent,
     AltaProfesionalComponent,
-    AdministrarHorariosComponent
+    AdministrarHorariosComponent,
+    TurnosComponent,
+    ConfirmarTurnosComponent
   ],
   imports: [
     CommonModule,
