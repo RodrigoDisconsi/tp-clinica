@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AtenderTurnoComponent } from '../atender-turno/atender-turno.component';
 
 @Component({
   selector: 'app-ver-turnos',
@@ -9,7 +11,7 @@ export class VerTurnosComponent implements OnInit {
   
   public turnos:any;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.turnos = [{
@@ -28,6 +30,14 @@ export class VerTurnosComponent implements OnInit {
       especialidad: "Odontología",
       estado: false
     }];
+  }
+
+  atender(){
+    let dialogRef = this.dialog.open(AtenderTurnoComponent,
+      {
+        width: '50%',
+        height: '80%'
+      });
   }
 
 }

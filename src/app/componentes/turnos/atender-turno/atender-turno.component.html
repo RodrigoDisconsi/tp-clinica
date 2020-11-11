@@ -1,16 +1,79 @@
-<div class="card" style="width: 20rem;">
-    <img class="card-img-top" src="../../../../assets/imagenes/doc-7.jpg" width="120px" height="180px">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<mat-dialog-content>
+  <!-- <div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="..." class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
+  </div> -->
+
+  <!-- <form [formGroup]="form">
+    <h3>
+      Experiencia Laboral:
+    </h3>
+    <div formArrayName="experienciaLaboral">
+      <div *ngFor="let trabajo of experienciaLaboral.controls; let i = index;" [formGroupName]="i">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">{{trabajo.value.empresa}}</span>
+          </div>
+          <input formControlName="puesto" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <hr />
+      </div>
+    </div>
+    <button (click)="anadirExperienciaLaboral()">
+      + Añadir
+    </button>
+    <button (click)="borrarTrabajo(i)">Borrar</button>
+  </form> -->
+
+
+  <div class="card text-center">
+    <div class="card-header">
+      <img src="../../../assets/imagenes/doc-7.jpg" width="120px" height="120px">
+    </div>
     <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <h5 class="card-title">Rodrigo Disconsi</h5>
+      <p class="card-text">Dolor en la muela de juicio.</p>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <br>
+      <form [formGroup]="form">
+        <h4>
+          Campos génericos
+        </h4>
+        <div formArrayName="camposGen">
+          <div *ngFor="let campo of camposGen.controls; let i = index;" [formGroupName]="i">
+            <mat-form-field>
+              <mat-label>{{campo.value.nombre}}</mat-label>
+              <input matInput formControlName="desc" class="form-control">
+            </mat-form-field>
+          </div>
+        </div>
+        <div *ngIf="agregarCampoGen" class="form-group">
+          <div class="input-group mb-3">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-text">
+                  <input type="checkbox" [(ngModel)]="otroCampo" [ngModelOptions]="{standalone: true}" (change)="onChange()">
+                </div>
+                <input disabled formControlName="nuevoCampo" class="form-control" type="text" placeholder="Otra especialidad...">
+              </div>
+           </div>
+           <button *ngIf="otroCampo" mat-button color="primary" (click)="anadirCampoGen()">Añadir</button>
+        </div>
+      </form>
+    </div>
+    <div class="card-footer text-muted">
+      2 days ago
     </div>
   </div>
+</mat-dialog-content>

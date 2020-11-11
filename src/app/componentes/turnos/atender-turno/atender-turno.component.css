@@ -1,0 +1,11 @@
+::ng-deep .mat-dialog-container {
+    overflow-y: hidden !important;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+button{
+    width: 100%;
+}
