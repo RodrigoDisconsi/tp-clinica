@@ -1,3 +1,5 @@
+import { Horario } from "./horario";
+
 export interface User{
     uid?:string;
     email?:string;
@@ -10,4 +12,5 @@ export interface User{
     password?:string;
     activo?:boolean;
     especialidad?:string[];
+    horarios?:Horario[];
 }

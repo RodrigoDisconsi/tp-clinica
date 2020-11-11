@@ -1,4 +1,4 @@
-/* .overlay{
+.overlay{
     position: relative;
 }
 
@@ -21,4 +21,4 @@
     content: "";
     position: absolute;
     background: rgba(0, 0, 0, 0.2);
-} */
+}

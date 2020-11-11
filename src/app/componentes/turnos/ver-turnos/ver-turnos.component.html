@@ -1,0 +1,23 @@
+<h4 class="display-4 mb-0" style="color: white; text-align: center;">
+    Turnos pendientes
+</h4>
+<br>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Paciente</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Especialidad</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let turno of turnos" style="text-align: center; color: white;">
+        <!-- <th scope="row">1</th> -->
+        <td>{{turno.paciente}}</td>
+        <td>{{turno.dia}} {{turno.horario}}</td>
+        <td>{{turno.especialidad}}</td>
+        <td><button type="button" class="btn btn-1 btn-primary">Atender</button></td>
+      </tr>
+    </tbody>
+  </table>

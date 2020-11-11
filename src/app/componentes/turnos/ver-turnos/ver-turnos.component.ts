@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-confirmar-turnos',
-  templateUrl: './confirmar-turnos.component.html',
-  styleUrls: ['./confirmar-turnos.component.css']
+  selector: 'app-ver-turnos',
+  templateUrl: './ver-turnos.component.html',
+  styleUrls: ['./ver-turnos.component.css']
 })
-export class ConfirmarTurnosComponent implements OnInit {
-
+export class VerTurnosComponent implements OnInit {
+  
   public turnos:any;
-  public checked:boolean = false;
-  public primeraVez:boolean = false;
 
   constructor() { }
 
@@ -30,11 +28,6 @@ export class ConfirmarTurnosComponent implements OnInit {
       especialidad: "Odontología",
       estado: false
     }];
-  }
-
-  onChange(turno){
-    this.primeraVez = true;
-    console.info(turno);
   }
 
 }

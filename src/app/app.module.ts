@@ -33,6 +33,8 @@ import { AltaProfesionalComponent } from './componentes/alta-profesional/alta-pr
 import { AdministrarHorariosComponent } from './componentes/administrar-horarios/administrar-horarios.component';
 import { TurnosComponent } from './componentes/turnos/turnos.component';
 import { ConfirmarTurnosComponent } from './componentes/turnos/confirmar-turnos/confirmar-turnos.component';
+import { VerTurnosComponent } from './componentes/turnos/ver-turnos/ver-turnos.component';
+import { AtenderTurnoComponent } from './componentes/turnos/atender-turno/atender-turno.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { ConfirmarTurnosComponent } from './componentes/turnos/confirmar-turnos/
     AltaProfesionalComponent,
     AdministrarHorariosComponent,
     TurnosComponent,
-    ConfirmarTurnosComponent
+    ConfirmarTurnosComponent,
+    VerTurnosComponent,
+    AtenderTurnoComponent
   ],
   imports: [
     CommonModule,

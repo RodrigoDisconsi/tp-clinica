@@ -6,9 +6,9 @@
     <li *ngFor="let turno of turnos" class="list-group-item d-flex justify-content-between lh-condensed">
         <div>
             <h6 class="my-0">{{turno.paciente}}</h6>
-            <small class="text-muted">{{turno.dia}}</small>
+            <small class="text-muted">{{turno.dia}} {{turno.horario}}</small>
             <br>
-            <small class="text-muted">{{turno.hora}}</small>
+            <small class="text-muted">{{turno.especialidad}}</small>
             <br>
             <br>
               <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
@@ -19,6 +19,6 @@
         <img src="../../../assets/imagenes/doc-7.jpg" width="120px" height="120px">
     </li>
 </ul>
-<div>
+<!-- <div>
     <button style="width: 100%;" type="button" class="btn btn-1 btn-success">Guardar</button>
-</div>
+</div> -->
