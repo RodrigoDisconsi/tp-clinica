@@ -37,6 +37,7 @@
     "linq-es2015": "^2.5.1",
     "moment": "^2.24.0",
     "ng2-nouislider": "1.7.13",
+    "ng2-smart-table": "^1.7.1",
     "nouislider": "13.1.3",
     "path": "^0.12.7",
     "popper.js": "1.14.7",
@@ -46,6 +47,7 @@
     "zone.js": "0.10.2"
   },
   "devDependencies": {
+    "@angular-devkit/architect": ">= 0.900 < 0.1100",
     "@angular-devkit/build-angular": "0.900.5",
     "@angular/cli": "9.0.5",
     "@angular/compiler-cli": "9.0.5",
@@ -54,6 +56,10 @@
     "@types/jasminewd2": "2.0.8",
     "@types/node": "13.9.0",
     "codelyzer": "5.2.1",
+    "firebase-tools": "^8.0.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
     "jasmine-core": "3.5.0",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "4.4.1",
@@ -61,16 +67,12 @@
     "karma-coverage-istanbul-reporter": "2.1.1",
     "karma-jasmine": "3.1.1",
     "karma-jasmine-html-reporter": "1.5.2",
+    "ng2-completer": "^9.0.1",
+    "open": "^7.0.3",
     "protractor": "5.4.3",
     "ts-node": "8.6.2",
     "tslint": "6.0.0",
-    "typescript": "3.7.5",
-    "@angular-devkit/architect": ">= 0.900 < 0.1100",
-    "firebase-tools": "^8.0.0",
-    "fuzzy": "^0.1.3",
-    "inquirer": "^6.2.2",
-    "inquirer-autocomplete-prompt": "^1.0.1",
-    "open": "^7.0.3"
+    "typescript": "3.7.5"
   },
   "engines": {
     "node": "v12.16.1",

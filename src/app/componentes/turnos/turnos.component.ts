@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-turnos',
@@ -10,10 +12,15 @@ export class TurnosComponent implements OnInit {
   public turnos:any;
   public checked:boolean = false;
   public primeraVez:boolean = false;
+  public user:User;
+  public paciente:boolean = false;
 
-  constructor() { }
+  constructor(private auth:AuthService) { }
 
   ngOnInit(): void {
+    this.user = this.auth.getUser();
+    this.paciente = this.user.tipo == 'paciente' ?? false;
+
     this.turnos = [{
       paciente: "Rodrigo Disconsi",
       dia: "Martes",

@@ -1,40 +1,42 @@
 <!-- <div class="position-relative"> -->
 <!-- <section  class="slide-item overlay" style="background-image: url(../../../assets/imagenes/bg_1.jpg);"> -->
-<div>
-    <section class="section section-lg section-hero section-shaped">
-        <div class="shape shape-style-1 shape-primary">
-            <span class="span-150"></span>
-            <span class="span-50"></span>
-            <span class="span-50"></span>
-            <span class="span-75"></span>
-            <span class="span-100"></span>
-            <span class="span-75"></span>
-            <span class="span-50"></span>
-            <span class="span-100"></span>
-            <span class="span-50"></span>
-            <span class="span-100"></span>
-        </div>
-        <div class="container">
-            <div class="container">
-                  <div class="row">
-                    <div class="col-md-5">
-                        <app-confirmar-turnos></app-confirmar-turnos>
-                    </div>
-                    <div class="col-md-6 offset-md-1">
-                        <app-ver-turnos></app-ver-turnos>
-                    </div>
-                    <!-- <div class="col-md-6">
-                        <app-atender-turno></app-atender-turno>
-                    </div> -->
+    <div>
+
+        <section class="section section-lg section-hero section-shaped" style="background-image: url(../../../assets/imagenes/bg_1.jpg);">
+            <div class="shape shape-style-1 shape-primary">
+                <span class="span-150"></span>
+                <span class="span-50"></span>
+                <span class="span-50"></span>
+                <span class="span-75"></span>
+                <span class="span-100"></span>
+                <span class="span-75"></span>
+                <span class="span-50"></span>
+                <span class="span-100"></span>
+                <span class="span-50"></span>
+                <span class="span-100"></span>
+            </div>
+            <div class="container" *ngIf="!this.paciente">
+                <div class="container">
+                      <div class="row">
+                        <div class="col-md-5">
+                            <app-confirmar-turnos></app-confirmar-turnos>
+                        </div>
+                        <div class="col-md-6 offset-md-1">
+                            <app-ver-turnos></app-ver-turnos>
+                        </div>
+                      </div>
                   </div>
-              </div>
-        </div>
-        <div class="separator separator-bottom separator-skew zindex-100">
-            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
-                xmlns="http://www.w3.org/2000/svg">
-                <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-            </svg>
-        </div>
-    </section>
-</div>
+            </div>
+            <div *ngIf="this.paciente">
+                <!-- <app-ver-turnos-paciente></app-ver-turnos-paciente> -->
+                <app-sacar-turno></app-sacar-turno>
+            </div>
+            <div class="separator separator-bottom separator-skew zindex-100">
+                <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+            </div>
+        </section>
+    </div>
 <!-- </div> -->

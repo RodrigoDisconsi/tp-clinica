@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { MaterialModule } from './material/material.module';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { AppComponent } from './app.component';
 // import { LandingComponent } from './landing/landing.component';
@@ -35,6 +36,8 @@ import { TurnosComponent } from './componentes/turnos/turnos.component';
 import { ConfirmarTurnosComponent } from './componentes/turnos/confirmar-turnos/confirmar-turnos.component';
 import { VerTurnosComponent } from './componentes/turnos/ver-turnos/ver-turnos.component';
 import { AtenderTurnoComponent } from './componentes/turnos/atender-turno/atender-turno.component';
+import { VerTurnosPacienteComponent } from './componentes/turnos/ver-turnos-paciente/ver-turnos-paciente.component';
+import { SacarTurnoComponent } from './componentes/turnos/sacar-turno/sacar-turno.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,9 @@ import { AtenderTurnoComponent } from './componentes/turnos/atender-turno/atende
     TurnosComponent,
     ConfirmarTurnosComponent,
     VerTurnosComponent,
-    AtenderTurnoComponent
+    AtenderTurnoComponent,
+    VerTurnosPacienteComponent,
+    SacarTurnoComponent
   ],
   imports: [
     CommonModule,
@@ -67,6 +72,7 @@ import { AtenderTurnoComponent } from './componentes/turnos/atender-turno/atende
     HomeModule,
     BrowserAnimationsModule,
     MaterialModule,
+    Ng2SmartTableModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
