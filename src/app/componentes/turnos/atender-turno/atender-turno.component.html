@@ -70,10 +70,33 @@
            </div>
            <button *ngIf="otroCampo" mat-button color="primary" (click)="anadirCampoGen()">Añadir</button>
         </div>
+        <hr>
+        <h4>
+          Campos de especialidad
+        </h4>
+        <div *ngIf="agregoCamposEsp" formArrayName="camposEsp">
+          <div *ngFor="let campo of camposEsp.controls; let i = index;" [formGroupName]="i">
+            <mat-form-field>
+              <mat-label>{{campo.value.nombre}}</mat-label>
+              <input matInput formControlName="desc" class="form-control">
+            </mat-form-field>
+          </div>
+        </div>
+        <div *ngIf="!limiteDeCampos" class="form-group">
+          <div class="input-group mb-3">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-text">
+                  <input type="checkbox" [(ngModel)]="otroCampoEsp" [ngModelOptions]="{standalone: true}" (change)="onChangeEsp()">
+                </div>
+                <input disabled formControlName="nuevoCampoEsp" class="form-control" type="text" placeholder="Otra especialidad...">
+              </div>
+           </div>
+           <button *ngIf="otroCampoEsp" mat-button color="primary" (click)="anadirCamposEsp()">Añadir</button>
+        </div>
       </form>
     </div>
     <div class="card-footer text-muted">
-      2 days ago
+      <button [disabled]="form.invalid" mat-flat-button color="primary">Guardar</button>
     </div>
   </div>
 </mat-dialog-content>
