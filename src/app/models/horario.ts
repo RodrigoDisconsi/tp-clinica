@@ -1,4 +1,5 @@
 export interface Horario {
     dia:string;
-    horario:string;
+    horaDesde:string;
+    horaHasta:string;
 }

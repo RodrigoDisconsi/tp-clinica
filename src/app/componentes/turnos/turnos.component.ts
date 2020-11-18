@@ -14,11 +14,15 @@ export class TurnosComponent implements OnInit {
   public primeraVez:boolean = false;
   public user:User;
   public paciente:boolean = false;
+  public administrarHorario:boolean = false;
 
   constructor(private auth:AuthService) { }
 
   ngOnInit(): void {
     this.user = this.auth.getUser();
+    if(!this.user.horarios){
+      this.administrarHorario = true;
+    }
     this.paciente = this.user.tipo == 'paciente' ?? false;
 
     this.turnos = [{
@@ -47,5 +51,14 @@ export class TurnosComponent implements OnInit {
     // console.info(e);
     this.primeraVez = true;
     console.info(turno);
+  }
+
+  onHorarioGuardado(e){
+    if(e){
+      this.administrarHorario = false;
+    }
+    else{
+      this.administrarHorario = true;
+    }
   }
 }

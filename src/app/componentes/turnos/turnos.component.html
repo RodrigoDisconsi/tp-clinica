@@ -16,17 +16,20 @@
                 <span class="span-100"></span>
             </div>
             <div class="container" *ngIf="!this.paciente">
+                <button *ngIf="!administrarHorario" type="button" class="btn btn-secondary" (click)="onHorarioGuardado(false)">Administrar Horarios</button>
                 <div class="container">
-                      <div class="row">
+                      <div class="row" *ngIf="!administrarHorario">
                         <div class="col-md-5">
-                            <!-- <app-confirmar-turnos></app-confirmar-turnos> -->
-                            <app-horarios-profesional></app-horarios-profesional>
+                            <app-confirmar-turnos></app-confirmar-turnos>
                         </div>
                         <div class="col-md-6 offset-md-1">
                             <app-ver-turnos></app-ver-turnos>
                         </div>
                       </div>
-                  </div>
+                      <div class="row justify-content-center" *ngIf="administrarHorario">
+                        <app-horarios-profesional [usuario]="user" (horarioGuardado)="onHorarioGuardado()"></app-horarios-profesional>
+                      </div>
+                </div>
             </div>
             <div *ngIf="this.paciente">
                 <!-- <app-ver-turnos-paciente></app-ver-turnos-paciente> -->

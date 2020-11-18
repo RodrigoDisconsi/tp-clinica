@@ -15,7 +15,7 @@ export class SacarTurnoComponent implements OnInit {
   ngOnInit(): void {
     this.api.getWithFilter("Users", "tipo", "==", "profesional").subscribe(resp =>{
       resp.map(x =>{
-        // if(x.otraEspecialidad)
+        console.info(x);
       })
       this.profesionales = resp;
       console.info(this.profesionales);

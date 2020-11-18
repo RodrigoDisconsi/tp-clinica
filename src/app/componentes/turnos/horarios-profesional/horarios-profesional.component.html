@@ -23,19 +23,19 @@
                 <span class="input-group-text" id="inputGroup-sizing-default">Desde</span>
               </div>
               <div *ngIf="horario.value.nombre != 'Sábado'">
-                <input type="number" min="08" max="16" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input formControlName="horaDesde" type="number" min="08" max="16" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
               </div>
               <div *ngIf="horario.value.nombre == 'Sábado'">
-                <input type="number" min="08" max="12" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input formControlName="horaDesde" type="number" min="08" max="12" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
               </div>
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Hasta</span>
               </div>
               <div *ngIf="horario.value.nombre != 'Sábado'">
-                <input type="number" min="10" max="19" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input formControlName="horaHasta" type="number" min="10" max="19" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
               </div>
               <div *ngIf="horario.value.nombre == 'Sábado'">
-                <input type="number" min="10" max="14" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input formControlName="horaHasta" type="number" min="10" max="14" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
               </div>
               <button type="button" class="close" aria-label="Close" (click)="removerHorario(i)">
                 <span aria-hidden="true">&times;</span>
@@ -44,4 +44,7 @@
           </div>
         </div>
      </form>
+     <div *ngIf="this.getHorarios.length > 0">
+       <button [disabled]="!this.getHorarios.valid" type="button" class="btn btn-secondary" (click)="onGuardar()">Guardar Horarios</button>
+     </div>
   </div>
