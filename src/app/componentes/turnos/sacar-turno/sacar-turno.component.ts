@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/servicios/api.service';
 
 @Component({
   selector: 'app-sacar-turno',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SacarTurnoComponent implements OnInit {
 
-  constructor() { }
+  public profesionales:any;
+
+  constructor(private api:ApiService) { }
 
   ngOnInit(): void {
+    this.api.getWithFilter("Users", "tipo", "==", "profesional").subscribe(resp =>{
+      resp.map(x =>{
+        // if(x.otraEspecialidad)
+      })
+      this.profesionales = resp;
+      console.info(this.profesionales);
+    });
   }
 
   myFilter = (d: Date): boolean => {

@@ -18,9 +18,9 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 // import { FooterComponent } from './shared/footer/footer.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
-import { HomeModule } from './home/home.module';
+// import { HomeModule } from './home/home.module';
 import { LoginComponent } from './componentes/login/login.component';
-// import { HomeComponent } from './componentes/home/home.component';
+import { HomeComponent } from './componentes/home/home.component';
 import { RegisterComponent } from './componentes/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -38,6 +38,7 @@ import { VerTurnosComponent } from './componentes/turnos/ver-turnos/ver-turnos.c
 import { AtenderTurnoComponent } from './componentes/turnos/atender-turno/atender-turno.component';
 import { VerTurnosPacienteComponent } from './componentes/turnos/ver-turnos-paciente/ver-turnos-paciente.component';
 import { SacarTurnoComponent } from './componentes/turnos/sacar-turno/sacar-turno.component';
+import { HorariosProfesionalComponent } from './componentes/turnos/horarios-profesional/horarios-profesional.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { SacarTurnoComponent } from './componentes/turnos/sacar-turno/sacar-turn
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    // HomeComponent,
+    HomeComponent,
     RegisterComponent,
     ProfesionalComponent,
     AdministradorComponent,
@@ -59,7 +60,8 @@ import { SacarTurnoComponent } from './componentes/turnos/sacar-turno/sacar-turn
     VerTurnosComponent,
     AtenderTurnoComponent,
     VerTurnosPacienteComponent,
-    SacarTurnoComponent
+    SacarTurnoComponent,
+    HorariosProfesionalComponent
   ],
   imports: [
     CommonModule,
@@ -69,7 +71,7 @@ import { SacarTurnoComponent } from './componentes/turnos/sacar-turno/sacar-turn
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule,
+    // HomeModule,
     BrowserAnimationsModule,
     MaterialModule,
     Ng2SmartTableModule,

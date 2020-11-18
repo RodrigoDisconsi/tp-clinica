@@ -19,4 +19,8 @@ export class AdministrarHorariosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onGuardar(){
+    
+  }
+
 }

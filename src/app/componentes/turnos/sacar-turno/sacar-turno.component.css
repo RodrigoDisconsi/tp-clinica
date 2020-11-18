@@ -1,0 +1,12 @@
+mat-card{
+    width: 40%;
+}
+
+.img{
+    background-image: url('../../../../assets/imagenes/bg_1.jpg');
+    background-size: cover;
+}
+
+button{
+    width: 100%;
+}

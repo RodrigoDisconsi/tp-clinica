@@ -1,0 +1,47 @@
+  <h4>Horarios:</h4>
+  <div class="container">
+      <div class="row justify-content-between">
+          <mat-form-field>
+            <mat-label>Dia</mat-label>
+            <mat-select [disabled]="seleccionoDia" [(ngModel)]="diaSeleccionado">
+              <mat-option value="Lunes">Lunes</mat-option>
+              <mat-option value="Martes">Martes</mat-option>
+              <mat-option value="Miércoles">Miércoles</mat-option>
+              <mat-option value="Jueves">Jueves</mat-option>
+              <mat-option value="Viernes">Viernes</mat-option>
+              <mat-option value="Sábado">Sábado</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button type="button" class="btn btn-secondary" (click)="onAgregar()">Agregar</button>
+      </div>
+      <form [formGroup]="frmHorarios">
+        <div formArrayName="horarios">
+          <div *ngFor="let horario of getHorarios.controls; let i = index;" [formGroupName]="i">
+            <small>{{horario.value.dia}}</small>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Desde</span>
+              </div>
+              <div *ngIf="horario.value.nombre != 'Sábado'">
+                <input type="number" min="08" max="16" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div *ngIf="horario.value.nombre == 'Sábado'">
+                <input type="number" min="08" max="12" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Hasta</span>
+              </div>
+              <div *ngIf="horario.value.nombre != 'Sábado'">
+                <input type="number" min="10" max="19" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div *ngIf="horario.value.nombre == 'Sábado'">
+                <input type="number" min="10" max="14" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <button type="button" class="close" aria-label="Close" (click)="removerHorario(i)">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+     </form>
+  </div>

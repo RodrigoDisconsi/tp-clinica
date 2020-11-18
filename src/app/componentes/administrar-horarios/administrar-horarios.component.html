@@ -21,6 +21,10 @@
                     <a (click)="sabado = !sabado" class="list-group-item list-group-item-action" [ngClass]="{active: sabado}">
                         Sábado
                     </a>
+                    <br>
+                    <div>
+                        <button mat-raised-button (click)="onGuardar()">Guardar Cambios</button>
+                    </div>
                 </div>
                 <div class="col-2 list-group">
                     <small style="color: white;">Desde</small>
@@ -73,14 +77,3 @@
           </div>
     </section>
 </div>
-<!-- <div class="position-fixed">
-    <div class="fixed-middle list-group">
-        <a href="#" class="list-group-item list-group-item-action active">
-          Cras justo odio
-        </a>
-        <a (click)="lunes = !lunes" class="list-group-item list-group-item-action" [ngClass]="{active: lunes}">Dapibus ac facilisis in</a>
-        <a (click)="lunes = !lunes" class="list-group-item list-group-item-action" [ngClass]="{active: lunes}">Morbi leo risus</a>
-        <a (click)="lunes = !lunes" class="list-group-item list-group-item-action" [ngClass]="{active: lunes}">Porta ac consectetur ac</a>
-        <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
-    </div>
-</div> -->
